@@ -1,23 +1,45 @@
-<!-- index.html -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <title>Breathing image</title>
-  <style>
-    body{background:#111;display:flex;height:100vh;align-items:center;justify-content:center}
-    .breathe{
-      width: 50vmin;          /* whatever size you want */
-      animation: breathe 4s cubic-bezier(.45,0,.55,1) infinite;
-      border-radius: 1rem;
+<meta charset="UTF-8">
+<title>Breathing Image</title>
+<style>
+    body {
+        margin: 0;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
     }
-    @keyframes breathe{
-      0%,100%{transform:scale(1)   translateY(0)}
-      50%     {transform:scale(1.04) translateY(-1.2%)} /* 4 % bigger + tiny lift */
+
+    img {
+        width: 100%;
+        height: auto;
+        animation: breathe 6s ease-in-out infinite;
+        transform-origin: center;
     }
-  </style>
+
+    @keyframes breathe {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.02);
+            opacity: 0.96;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+</style>
 </head>
 <body>
-  <img class="breathe" src="SOCIALSOVERLAY.jpg" alt="breathing">
+
+<img src="SOCIALSOVERLAY.png" alt="Breathing Image">
+
 </body>
 </html>
