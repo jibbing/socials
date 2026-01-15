@@ -1,52 +1,23 @@
-<!DOCTYPE html>
+<!-- index.html -->
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Subtle Pulse Image</title>
-
+  <meta charset="utf-8"/>
+  <title>Breathing image</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      overflow: hidden;
+    body{background:#111;display:flex;height:100vh;align-items:center;justify-content:center}
+    .breathe{
+      width: 50vmin;          /* whatever size you want */
+      animation: breathe 4s cubic-bezier(.45,0,.55,1) infinite;
+      border-radius: 1rem;
     }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .pulse {
-      width: 100%;
-      max-width: 400px;
-
-      /* VERY subtle, slow pulse */
-      animation: pulse 12s ease-in-out infinite;
-      transform-origin: center;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      50% {
-        transform: scale(1.012); /* extremely subtle */
-        opacity: 0.985;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
+    @keyframes breathe{
+      0%,100%{transform:scale(1)   translateY(0)}
+      50%     {transform:scale(1.04) translateY(-1.2%)} /* 4 % bigger + tiny lift */
     }
   </style>
 </head>
-
 <body>
-  <img src="SOCIALSOVERLAY.png" class="pulse" alt="Overlay Image">
+  <img class="breathe" src="SOCIALSOVERLAY.jpg" alt="breathing">
 </body>
 </html>
